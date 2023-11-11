@@ -1,4 +1,4 @@
-namespace PeopleManager.Cyb.Ui.Mvc.Models
+namespace VivesShop.Cyb.Ui.Mvc.Models
 {
     public class ErrorViewModel
     {

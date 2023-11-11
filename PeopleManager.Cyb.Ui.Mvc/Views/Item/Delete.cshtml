@@ -1,12 +1,12 @@
-﻿@model Person
+﻿@model ShopItem
 
 @{
-    ViewData["Title"] = $"Delete {Model.FirstName} {Model.LastName}";
+    ViewData["Title"] = $"Delete {Model.ItemName}";
 }
 
 <h1>@ViewData["Title"]</h1>
 
-<p>Are you sure you want to delete @Model.FirstName @Model.LastName?</p>
+<p>Are you sure you want to delete @Model.ItemName</p>
 
 <form method="post">
     <a asp-action="Index">No</a>

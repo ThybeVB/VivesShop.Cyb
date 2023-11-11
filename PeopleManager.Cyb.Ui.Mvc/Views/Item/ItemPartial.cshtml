@@ -1,9 +1,8 @@
-﻿@model Person
+﻿@model ShopItem
 
 <tr>
-    <td>@Model.FirstName</td>
-    <td>@Model.LastName</td>
-    <td>@Model.Email</td>
+    <td>@Model.ItemName</td>
+    <td>@Model.Price</td>
     <td>
         <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@Model.Id">
             Edit

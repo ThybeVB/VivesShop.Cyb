@@ -1,24 +1,16 @@
-﻿@model IList<Person>
+﻿@model IList<ShopItem>
 @{
     ViewData["Title"] = "Home Page";
-    var firstPerson = Model.FirstOrDefault();
 }
-
-@if (firstPerson is not null)
-{
-    <partial name="PersonPartial" model="firstPerson" />
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
 
 <div class="row">
-    @foreach (var person in Model)
-    {
-        <div class="col-4">
-            <partial name="PersonPartial" model="person" />
-        </div>
-    }
+    <div class="col">
+        <h2>Shop Items</h2>
+    </div>
+    <div class="col">
+        <h2>Shopping cart</h2>
+        
+        <h2>Totaal: </h2>
+        <a href="#" class="btn btn-primary">Checkout</a>
+    </div>
 </div>

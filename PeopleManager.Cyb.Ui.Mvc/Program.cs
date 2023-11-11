@@ -1,15 +1,15 @@
 using Microsoft.EntityFrameworkCore;
-using PeopleManager.Cyb.Ui.Mvc.Core;
+using VivesShop.Cyb.Ui.Mvc.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-//builder.Services.AddSingleton<PeopleManagerDbContext>();
-builder.Services.AddDbContext<PeopleManagerDbContext>(options =>
+//builder.Services.AddSingleton<VivesShopDbContext>();
+builder.Services.AddDbContext<VivesShopDbContext>(options =>
 {
-    options.UseInMemoryDatabase(nameof(PeopleManagerDbContext));
-    //options.UseSqlServer("Server=.\\SqlExpress;Database=PeopleManager;Trusted_Connection=True;TrustServerCertificate=true");
+    options.UseInMemoryDatabase(nameof(VivesShopDbContext));
+    //options.UseSqlServer("Server=.\\SqlExpress;Database=VivesShop;Trusted_Connection=True;TrustServerCertificate=true");
 });
 
 var app = builder.Build();
@@ -25,7 +25,7 @@ else
 {
     using var scope = app.Services.CreateScope();
     
-    var dbContext = scope.ServiceProvider.GetRequiredService<PeopleManagerDbContext>();
+    var dbContext = scope.ServiceProvider.GetRequiredService<VivesShopDbContext>();
     if (dbContext.Database.IsInMemory())
     {
         dbContext.Seed();

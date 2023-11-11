@@ -1,0 +1,14 @@
+﻿@model ShopItem
+
+<div asp-validation-summary="ModelOnly"></div>
+
+<div class="mb-3">
+    <label asp-for="ItemName" class="form-label"></label>
+    <input asp-for="ItemName" class="form-control">
+    <span asp-validation-for="ItemName"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Price" class="form-label"></label>
+    <input asp-for="Price" class=" form-control">
+    <span asp-validation-for="Price"></span>
+</div>
