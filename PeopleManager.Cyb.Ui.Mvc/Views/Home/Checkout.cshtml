@@ -1,31 +1,66 @@
 ﻿@model List<CartItem>
 
+@{
+    ViewData["Title"] = $"Checkout page";
+}
+
 <h1>Checkout</h1>
 
 <h2>Je bestelde items:</h2>
-<table class="table table-striped w-25">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Naam</th>
-        <th scope="col">Prijs</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (CartItem cartItem in Model)
-    {
-        <tr>
-            <th scope="row">@cartItem.Id</th>
-            <th scope="row">@cartItem.ItemName</th>
-                <th scope="row">€ @Math.Round(cartItem.Price, 2)</th>
-        </tr>
-    }
-    </tbody>
-    <tfoot class="table-group-divider">
-    <tr>
-        <th>Totale prijs</th>
-        <th></th>
-        <th>€ @Math.Round(ViewBag.Price, 2)</th>
-    </tr>
-    </tfoot>
-</table>
+<div class="container">
+<div class="row">
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Naam</th>
+                <th scope="col">Prijs</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (CartItem cartItem in Model)
+            {
+                <tr>
+                    <th scope="row">@cartItem.Id</th>
+                    <th scope="row">@cartItem.ItemName</th>
+                    <th scope="row">€ @Math.Round(cartItem.Price, 2)</th>
+                </tr>
+            }
+            </tbody>
+            <tfoot class="table-group-divider">
+            <tr>
+                <th>Totale prijs</th>
+                <th></th>
+                <th>€ @Math.Round(ViewBag.Price, 2)</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="col">
+        <h2>Betalingsmethode</h2>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Credit card
+            </label>
+            <img src="/images/maestro.png" width="32px" height="auto"/>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                Bancontact
+            </label>
+            <img src="/images/bancontact.jpg" width="32px" height="auto"/>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+            <label class="form-check-label" for="flexRadioDefault3">
+                PayPal
+            </label>
+            <img src="/images/paypal.png" width="32px" height="auto"/>
+        </div>
+        <a class="btn btn-primary" href="#">Betaal</a>
+    </div>
+</div>
+</div>
