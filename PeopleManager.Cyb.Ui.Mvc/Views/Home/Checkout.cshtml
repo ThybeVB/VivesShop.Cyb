@@ -2,14 +2,30 @@
 
 <h1>Checkout</h1>
 
-<p>Je bestelde items:</p>
-<ul>
-    @foreach (CartItem c in Model)
+<h2>Je bestelde items:</h2>
+<table class="table table-striped w-25">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Naam</th>
+        <th scope="col">Prijs</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (CartItem cartItem in Model)
     {
-        <li>
-            @c.ItemName met kostprijs € @c.Price
-        </li>
+        <tr>
+            <th scope="row">@cartItem.Id</th>
+            <th scope="row">@cartItem.ItemName</th>
+                <th scope="row">€ @Math.Round(cartItem.Price, 2)</th>
+        </tr>
     }
-</ul>
-
-<p>Te betalen: € @ViewBag.Price</p>
+    </tbody>
+    <tfoot class="table-group-divider">
+    <tr>
+        <th>Totale prijs</th>
+        <th></th>
+        <th>€ @Math.Round(ViewBag.Price, 2)</th>
+    </tr>
+    </tfoot>
+</table>
