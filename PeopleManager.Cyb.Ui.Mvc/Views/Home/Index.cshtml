@@ -15,7 +15,7 @@
     <div class="col">
         <h2>Shopping cart</h2>
         
-        @foreach (ShopItem cartItem in Model.Cart)
+        @foreach (CartItem cartItem in Model.Cart)
         {
             <partial name="CartPartial" model="cartItem" />
         }
