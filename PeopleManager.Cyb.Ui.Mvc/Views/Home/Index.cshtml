@@ -1,16 +1,25 @@
-﻿@model IList<ShopItem>
+﻿
 @{
     ViewData["Title"] = "Home Page";
 }
 
+
 <div class="row">
     <div class="col">
         <h2>Shop Items</h2>
+        @foreach (ShopItem item in Model.Items)
+        {
+            <partial name="ItemPartial" model="item" />
+        }
     </div>
     <div class="col">
         <h2>Shopping cart</h2>
         
-        <h2>Totaal: </h2>
-        <a href="#" class="btn btn-primary">Checkout</a>
+        @foreach (ShopItem cartItem in Model.Cart)
+        {
+            <partial name="CartPartial" model="cartItem" />
+        }
+        <h2>Totaal: € @ViewBag.Price</h2>
+        <a asp-action="Checkout" class="btn btn-primary">Checkout</a>
     </div>
 </div>

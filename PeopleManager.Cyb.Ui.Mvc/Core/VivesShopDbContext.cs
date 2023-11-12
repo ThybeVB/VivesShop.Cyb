@@ -5,12 +5,10 @@ namespace VivesShop.Cyb.Ui.Mvc.Core
 {
     public class VivesShopDbContext: DbContext
     {
-        public VivesShopDbContext(DbContextOptions<VivesShopDbContext> options): base(options)
-        {
-            
-        }
+        public VivesShopDbContext(DbContextOptions<VivesShopDbContext> options): base(options) { }
 
         public DbSet<ShopItem> Items => Set<ShopItem>();
+        public DbSet<CartItem> Cart => Set<CartItem>();
 
         public void Seed()
         {
@@ -19,6 +17,7 @@ namespace VivesShop.Cyb.Ui.Mvc.Core
                 new ShopItem {ItemName = "Bicky Burger", Price = 4.5f},
                 new ShopItem {ItemName = "Brasilsaus", Price = 1.7f},
             });
+
             SaveChanges();
         }
     }

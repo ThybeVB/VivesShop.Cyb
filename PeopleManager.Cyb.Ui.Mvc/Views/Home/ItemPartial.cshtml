@@ -1,0 +1,4 @@
+﻿@model ShopItem
+
+<a asp-action="AddToCart" asp-route-id="@Model.Id" class="btn btn-warning">@Model.ItemName (€ @Model.Price) +</a>
+<br />

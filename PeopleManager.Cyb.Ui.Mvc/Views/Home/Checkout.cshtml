@@ -1,0 +1,15 @@
+﻿@model List<CartItem>
+
+<h1>Checkout</h1>
+
+<p>Je bestelde items:</p>
+<ul>
+    @foreach (CartItem c in Model)
+    {
+        <li>
+            @c.ItemName met kostprijs € @c.Price
+        </li>
+    }
+</ul>
+
+<p>Te betalen: € @ViewBag.Price</p>
